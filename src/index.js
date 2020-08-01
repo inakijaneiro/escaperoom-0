@@ -62,7 +62,7 @@ function grabGun() {
     scene.remove(gun);
     loader.load(
         // resource URL
-        'models/gltf/key/scene.gltf',
+        'src/models/gltf/key/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
         key = gltf.scene;
@@ -85,7 +85,7 @@ function grabUSB() {
     scene.remove(usb);
     loader.load(
         // resource URL
-        'models/gltf/gun/scene.gltf',
+        'src/models/gltf/gun/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
         gun = gltf.scene;
@@ -114,7 +114,7 @@ function openNote() {
 
     loader.load(
         // resource URL
-        'models/gltf/usb/scene.gltf',
+        'src/models/gltf/usb/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
         usb = gltf.scene;
@@ -152,7 +152,7 @@ function createLight() {
         setUpAudio("figureOut");
         loader.load(
             // resource URL
-            'models/gltf/paper/scene.gltf',
+            'src/models/gltf/paper/scene.gltf',
             // called when the resource is loaded
             function ( gltf ) {
             note = gltf.scene;
@@ -227,7 +227,7 @@ function loadScene() {
     // Load a glTF resource
     loader.load(
         // resource URL
-        'models/gltf/scene/scene.gltf',
+        'src/models/gltf/scene/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
         gtlfObj = gltf.scene;
@@ -249,7 +249,7 @@ function loadScene() {
 
     loader.load(
         // resource URL
-        'models/gltf/switch/scene.gltf',
+        'src/models/gltf/switch/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
         lightSwitch = gltf.scene;
@@ -268,7 +268,7 @@ function loadScene() {
 
     new RGBELoader()
     .setDataType( THREE.UnsignedByteType )
-    .setPath( 'models/' )
+    .setPath( 'src/models/' )
     .load( 'satara_night_no_lamps_1k.hdr', function ( texture ) {
 
         darkEnv = pmremGenerator.fromEquirectangular( texture ).texture;
@@ -280,7 +280,7 @@ function loadScene() {
 
     new RGBELoader()
     .setDataType( THREE.UnsignedByteType )
-    .setPath( 'models/' )
+    .setPath( 'src/models/' )
     .load( 'satara_night_1k.hdr', function ( texture ) {
 
         lightEnv = pmremGenerator.fromEquirectangular( texture ).texture;
@@ -447,7 +447,7 @@ function setBackgroundMusic() {
 
     // load a sound and set it as the Audio object's buffer
     var audioLoader = new THREE.AudioLoader();
-    audioLoader.load( 'audio/music.mp3', function( buffer ) {
+    audioLoader.load( 'src/audio/music.mp3', function( buffer ) {
         sound.setBuffer( buffer );
         sound.setLoop( true );
         sound.setVolume( 0.3 );
@@ -669,7 +669,7 @@ scene.add( sound );
 // load a resource
 audioLoader.load(
 	// resource URL
-	`audio/${audio}.mp3`,
+	`src/audio/${audio}.mp3`,
 
 	// onLoad callback
 	function ( audioBuffer ) {
