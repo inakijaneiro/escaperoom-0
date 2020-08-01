@@ -244,7 +244,13 @@ function loadScene() {
         })
 
         scene.add( gltf.scene );
-        }
+        },
+        // called while loading is progressing
+        function ( xhr ) {
+
+            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+        },
     );
 
     loader.load(
